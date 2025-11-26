@@ -43,12 +43,16 @@ export default function Home() {
 
   // فيديوهات الطقس المتاحة
   const weatherVideos: Record<string, string> = {
-    Clear: "/video/Clear.mp4",
-    Clouds: "/video/Clouds.mp4",
-    Rain: "/video/Rain.mp4",
-    Thunderstorm: "/video/Thunderstorm.mp4",
-    Snow: "/video/Snow.mp4",
-    Tornado: "/video/Tornado.mp4",
+    Clear:
+      "https://github.com/Zeyadhatem391/Weather/releases/download/v1.0/Clear.mp4",
+    Clouds:
+      "https://github.com/Zeyadhatem391/Weather/releases/download/v1.0/Clouds.mp4",
+    Rain: "https://github.com/Zeyadhatem391/Weather/releases/download/v1.0/Rain.mp4",
+    Thunderstorm:
+      "https://github.com/Zeyadhatem391/Weather/releases/download/v1.0/Thunderstorm.mp4",
+    Snow: "https://github.com/Zeyadhatem391/Weather/releases/download/v1.0/Snow.mp4",
+    Tornado:
+      "https://github.com/Zeyadhatem391/Weather/releases/download/v1.0/Tornado.mp4",
   };
 
   const [bgVideo, setBgVideo] = useState<string>(weatherVideos.Clear);
@@ -70,8 +74,10 @@ export default function Home() {
         setBgVideo(weatherVideos[mainWeather]);
       } else {
         // اختيار أقرب حالة إذا لم تتطابق
-        if (["Mist", "Haze", "Fog"].includes(mainWeather)) setBgVideo(weatherVideos.Clouds);
-        else if (["Drizzle"].includes(mainWeather)) setBgVideo(weatherVideos.Rain);
+        if (["Mist", "Haze", "Fog"].includes(mainWeather))
+          setBgVideo(weatherVideos.Clouds);
+        else if (["Drizzle"].includes(mainWeather))
+          setBgVideo(weatherVideos.Rain);
         else setBgVideo(weatherVideos.Clear);
       }
 
